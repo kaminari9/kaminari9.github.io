@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>kaminari9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: one centred column; each project is a link card */
+:root {
+  --bg: #05080e;
+  --bg-2: #0d1828;
+  --panel: rgba(10, 17, 29, .78);
+  --line: #1e2c40;
+  --fg: #e4edf6;
+  --dim: #8396ab;
+  --accent: #ffc857;
+  --f-display: "ZCOOL QingKe HuangYou", "Noto Sans SC", "PingFang SC", system-ui, sans-serif;
+  --f-body: "Noto Sans SC", "PingFang SC", "Hiragino Sans", system-ui, -apple-system, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { min-height: 100%; }
+body {
+  margin: 0; min-height: 100vh;
+  padding: 0 16px;
+  background: radial-gradient(ellipse 70% 60% at 50% 30%, var(--bg-2), var(--bg) 72%) var(--bg);
+  color: var(--fg); font-family: var(--f-body); font-size: 15px; line-height: 1.7;
+}
+main { max-width: 640px; margin: 0 auto; padding-block: 72px 48px; display: grid; gap: 32px; }
+header { display: grid; gap: 6px; }
+.eyebrow { margin: 0; font-family: var(--f-mono); font-size: 11px; letter-spacing: .18em; color: var(--dim); }
+h1 { margin: 0; font-family: var(--f-display); font-weight: 400; font-size: clamp(40px, 11vw, 60px); line-height: 1; }
+.projects { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.card {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px;
+  padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--panel); color: inherit; text-decoration: none;
+  transition: border-color .15s, transform .15s;
+}
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.thumb { width: 56px; height: 56px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; transform: rotate(-8deg); }
+.thumb i { border-radius: 3px; border: 1px solid rgba(0, 0, 0, .45); }
+.thumb i:nth-child(1) { background: hsl(195, 72%, 55%); }
+.thumb i:nth-child(2) { background: hsl(140, 72%, 55%); }
+.thumb i:nth-child(3) { background: hsl(60, 72%, 55%); }
+.thumb i:nth-child(4) { background: hsl(10, 72%, 55%); }
+.card h2 { margin: 0; font-family: var(--f-display); font-weight: 400; font-size: 26px; line-height: 1.1; }
+.card p { margin: 4px 0 0; color: var(--dim); font-size: 13px; }
+.arrow { font-size: 22px; color: var(--accent); }
+.text { min-width: 0; }
+footer { font-size: 12px; color: var(--dim); }
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } .card:hover { transform: none; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">KAMINARI9.GITHUB.IO</p>
+    <h1>小作品</h1>
+  </header>
+
+  <ul class="projects">
+    <li>
+      <a class="card" href="tetris3d/">
+        <div class="thumb" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="text">
+          <h2>3D 俄罗斯方块</h2>
+          <p>在 5×5×12 的立体深井里旋转、堆叠方块，填满一整层即可消除。支持键盘和手机触屏。</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+  </ul>
+
+  <footer>更多作品陆续加入。</footer>
+</main>
+</body>
+</html>
